@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ExternalLink, Code, X, ArrowRight, Zap, Eye, Clock } from 'lucide-react';
+import { ExternalLink, Code, X, ArrowRight } from 'lucide-react';
 import { ProjectType } from '../types';
 
 interface ProjectCardProps {
@@ -234,14 +234,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="absolute bottom-0 left-8 w-24 h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
           <div className="absolute bottom-0 right-12 w-16 h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
           
-          {/* Category badge - moved to top edge for earlier visibility */}
-          <div className="absolute -top-3 right-6 z-30">
-            <span className={`flex items-center text-xs font-bold px-4 py-1.5 rounded-full bg-gray-800 text-white border-l-4 ${categoryStyle.accent} shadow-lg backdrop-blur-sm`}>
-              <span className={`w-2 h-2 rounded-full ${categoryStyle.icon} mr-2 animate-pulse`}></span>
-              {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-            </span>
-          </div>
-          
           {/* Project Image with advanced overlay - slightly shorter */}
           <div className="relative overflow-hidden h-56">
             {/* Image overlay gradients */}
@@ -264,22 +256,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               className="w-full h-full object-cover transition-transform duration-700 transform group-hover:scale-110"
             />
             
-            {/* Futuristic floating stats - moved to top */}
-            <div className="absolute top-0 left-0 right-0 z-20 p-4 flex justify-start items-center bg-gradient-to-b from-gray-900/90 via-gray-900/40 to-transparent">
-              <div className="flex items-center space-x-3">
-                <div className="flex items-center text-xs text-white font-medium px-2 py-1 rounded-md bg-gray-800/70 backdrop-blur-sm">
-                  <Zap size={14} className="mr-1.5 text-yellow-400" />
-                  <span>{Math.floor(Math.random() * 50) + 50}</span>
-                </div>
-                <div className="flex items-center text-xs text-white font-medium px-2 py-1 rounded-md bg-gray-800/70 backdrop-blur-sm">
-                  <Eye size={14} className="mr-1.5 text-blue-400" />
-                  <span>{Math.floor(Math.random() * 900) + 100}</span>
-                </div>
-                <div className="flex items-center text-xs text-white font-medium px-2 py-1 rounded-md bg-gray-800/70 backdrop-blur-sm">
-                  <Clock size={14} className="mr-1.5 text-green-400" />
-                  <span>{Math.floor(Math.random() * 60) + 10}m</span>
-                </div>
-              </div>
+            {/* Category badge moved down to top area of image */}
+            <div className="absolute top-4 right-4 z-30">
+              <span className={`flex items-center text-xs font-bold px-4 py-1.5 rounded-full bg-gray-800 text-white border-l-4 ${categoryStyle.accent} shadow-lg backdrop-blur-sm`}>
+                <span className={`w-2 h-2 rounded-full ${categoryStyle.icon} mr-2 animate-pulse`}></span>
+                {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+              </span>
             </div>
           </div>
           
@@ -430,7 +412,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   {/* Timeline */}
                   {project.timeline && (
                     <span className="flex items-center text-sm font-medium px-4 py-1.5 rounded-full bg-gray-800/80 text-white backdrop-blur-sm">
-                      <Clock size={14} className="mr-2 text-blue-400" />
                       {project.timeline}
                     </span>
                   )}

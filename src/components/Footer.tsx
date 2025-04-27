@@ -57,18 +57,18 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <span className="text-gray-400">Email:</span>
                 <a href="mailto:contact@yourname.com" className="text-gray-400 hover:text-white transition-colors duration-300 ml-2">
-                  contact@yourname.com
+                 sandeepnayak1724@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400">Phone:</span>
-                <a href="tel:+11234567890" className="text-gray-400 hover:text-white transition-colors duration-300 ml-2">
-                  +1 (123) 456-7890
+                <a href="tel:+91 8456834944" className="text-gray-400 hover:text-white transition-colors duration-300 ml-2">
+                  +91 8456834944
                 </a>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400">Location:</span>
-                <span className="text-gray-400 ml-2">San Francisco, CA, USA</span>
+                <span className="text-gray-400 ml-2">Bhubaneswar,Odisha</span>
               </li>
             </ul>
           </div>

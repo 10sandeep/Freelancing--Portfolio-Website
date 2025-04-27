@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Code, Award, Briefcase, Rocket } from "lucide-react";
-import THOR from '../assets/Thor.jpg'
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,23 +64,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image with minimal effects */}
-            <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="rounded-lg overflow-hidden ring-1 ring-cyan-500/30">
-                <img
-                  src={THOR}
-                  alt="Professional portrait"
-                  className="w-full h-auto transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-              
-              {/* Simple tech accent */}
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 border border-cyan-500/30 rounded-lg -rotate-6"></div>
-            </div>
-
-            {/* Content with simple styling */}
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Digital Creator Content */}
             <div className={`space-y-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div>
                 <h3 className="text-2xl font-bold text-cyan-400 mb-4">
@@ -111,28 +95,28 @@ const About = () => {
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Simple skills */}
-              <div>
-                <h3 className="text-xl font-bold text-cyan-400 mb-4">Technical Skills</h3>
-                <div className="space-y-4">
-                  {skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-300">{skill.name}</span>
-                        <span className="text-cyan-400">{skill.level}%</span>
-                      </div>
-                      <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-1000 ease-out"
-                          style={{ 
-                            width: isVisible ? `${skill.level}%` : '0%'
-                          }}
-                        />
-                      </div>
+            {/* Skills Section */}
+            <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6">Technical Skills</h3>
+              <div className="space-y-6">
+                {skills.map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-gray-300">{skill.name}</span>
+                      <span className="text-cyan-400">{skill.level}%</span>
                     </div>
-                  ))}
-                </div>
+                    <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-1000 ease-out"
+                        style={{ 
+                          width: isVisible ? `${skill.level}%` : '0%'
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

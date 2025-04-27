@@ -32,6 +32,19 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -41,7 +54,6 @@ const Header: React.FC = () => {
     { title: 'About', href: '#about' },
     { title: 'Projects', href: '#projects' },
     { title: 'Services', href: '#services' },
-    // { title: 'Testimonials', href: '#testimonials' },
     { title: 'Contact', href: '#contact' },
   ];
 
@@ -116,38 +128,40 @@ const Header: React.FC = () => {
           </button>
         </div>
         
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden fixed inset-0 z-40 bg-black/80 backdrop-blur-xl">
-            <div className="h-full flex flex-col justify-center items-center">
-              <nav className="flex flex-col space-y-6 text-center">
-                {navItems.map((item) => (
-                  <a
-                    key={item.title}
-                    href={item.href}
-                    className={`text-xl font-medium transition-all duration-300
-                      ${activeSection === item.href.substring(1)
-                        ? 'text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text'
-                        : 'text-gray-300 hover:text-white'
-                      }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.title}
-                  </a>
-                ))}
-                <div className="pt-6">
-                  <a 
-                    href="#contact"
-                    className="bg-gradient-to-r from-cyan-500 to-indigo-600 text-white px-8 py-3 rounded-full font-medium inline-block transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Let's Talk
-                  </a>
-                </div>
-              </nav>
-            </div>
+        {/* Mobile Menu - Now with solid black background */}
+        <div 
+          className={`md:hidden fixed inset-0 z-40 bg-blue backdrop-blur-lg transition-opacity duration-300 ${
+            isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          <div className="h-full flex flex-col justify-center items-center pt-16">
+            <nav className="flex flex-col space-y-8 text-center w-full px-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  className={`text-xl font-medium transition-all duration-300 py-2
+                    ${activeSection === item.href.substring(1)
+                      ? 'text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text'
+                      : 'text-gray-300 hover:text-white'
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.title}
+                </a>
+              ))}
+              <div className="pt-6">
+                <a 
+                  href="#contact"
+                  className="bg-gradient-to-r from-cyan-500 to-indigo-600 text-white px-8 py-3 rounded-full font-medium inline-block transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Let's Talk
+                </a>
+              </div>
+            </nav>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

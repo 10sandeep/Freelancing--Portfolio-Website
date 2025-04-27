@@ -115,12 +115,12 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button 
             onClick={toggleMenu}
-            className="md:hidden focus:outline-none relative z-50 group"
+            className="md:hidden focus:outline-none  relative z-50 group"
             aria-label="Toggle menu"
           >
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-black/30 backdrop-blur-md border border-white/10">
               {isOpen ? (
-                <X size={20} className="text-white" />
+                <X size={30} className="text-white" />
               ) : (
                 <Menu size={20} className="text-white" />
               )}
@@ -130,36 +130,44 @@ const Header: React.FC = () => {
         
         {/* Mobile Menu - Now with solid black background */}
         <div 
-          className={`md:hidden fixed inset-0 z-40 bg-blue backdrop-blur-lg transition-opacity duration-300 ${
+          className={`md:hidden fixed inset-0 pt-20 mt-20 z-40  ${
             isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <div className="h-full flex flex-col justify-center items-center pt-16">
-            <nav className="flex flex-col space-y-8 text-center w-full px-6">
-              {navItems.map((item) => (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  className={`text-xl font-medium transition-all duration-300 py-2
-                    ${activeSection === item.href.substring(1)
-                      ? 'text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text'
-                      : 'text-gray-300 hover:text-white'
-                    }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.title}
-                </a>
-              ))}
-              <div className="pt-6">
-                <a 
-                  href="#contact"
-                  className="bg-gradient-to-r from-cyan-500 to-indigo-600 text-white px-8 py-3 rounded-full font-medium inline-block transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Let's Talk
-                </a>
-              </div>
-            </nav>
+          <div className="h-full flex flex-col  justify-center items-center pt-16 ">
+ 
+{/* Background Overlay */}
+{/* <div className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-md transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+</div> */}
+
+{/* Sidebar */}
+<div className={`fixed top-0 right-0 h-full w-1.5/3 `}>
+  <nav className="flex flex-col items-end space-y-6 text-right w-full px-8 pt-10 pb-10 pr-20 bg-gradient-to-t from-blue-950 via-blue-800 to-black  rounded-3xl">
+    {navItems.map((item) => (
+      <a
+        key={item.title}
+        href={item.href}
+        className={`text-2xl font-semibold transition-all duration-300 py-2 ${
+          activeSection === item.href.substring(1)
+            ? 'text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text'
+            : 'text-white hover:text-gray-300'
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        {item.title}
+      </a>
+    ))}
+    <div className="pt-10">
+      <a 
+        href="#contact"
+        className="bg-gradient-to-r from-cyan-500 to-indigo-600 text-white px-8 py-3 rounded-full font-bold inline-block transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:scale-105"
+        onClick={() => setIsOpen(false)}
+      >
+        Let's Talk
+      </a>
+    </div>
+  </nav>
+</div>
           </div>
         </div>
       </div>

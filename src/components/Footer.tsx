@@ -1,11 +1,11 @@
-import React from 'react';
-import { ArrowUpCircle } from 'lucide-react';
+import React from "react";
+import { ArrowUpCircle } from "lucide-react";
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -16,9 +16,10 @@ const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold mb-4">Portfolio</h2>
             <p className="text-gray-400 mb-4 max-w-md">
-              Creating impactful digital experiences that help businesses transform their online presence and achieve their goals.
+              Creating impactful digital experiences that help businesses
+              transform their online presence and achieve their goals.
             </p>
-            <button 
+            <button
               onClick={scrollToTop}
               className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
             >
@@ -26,43 +27,79 @@ const Footer: React.FC = () => {
               <ArrowUpCircle size={16} className="ml-1" />
             </button>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                <a
+                  href="#home"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                <a
+                  href="#about"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  About
+                </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Services</a>
+                <a
+                  href="#services"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#projects" className="text-gray-400 hover:text-white transition-colors duration-300">Projects</a>
+                <a
+                  href="#projects"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Projects
+                </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a>
+                <a
+                  href="#testimonials"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Testimonials
+                </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                <a
+                  href="#contact"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-gray-400">Email:</span>
-                <a href="mailto:contact@yourname.com" className="text-gray-400 hover:text-white transition-colors duration-300 ml-2">
-                 sandeepnayak1724@gmail.com
+                <a
+                  href="mailto:contact@yourname.com"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 ml-2"
+                >
+                  sandeepnayak1724@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400">Phone:</span>
-                <a href="tel:+91 8456834944" className="text-gray-400 hover:text-white transition-colors duration-300 ml-2">
+                <a
+                  href="tel:+91 8456834944"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 ml-2"
+                >
                   +91 8456834944
                 </a>
               </li>
@@ -73,14 +110,25 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+            &copy; {new Date().getFullYear()} Sandeep Nayak. All rights
+            reserved.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

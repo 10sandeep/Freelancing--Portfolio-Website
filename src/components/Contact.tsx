@@ -20,26 +20,57 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+    try {
+      // Create FormData object
+      const formDataToSend = new FormData();
+      
+      // Add form fields
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      
+      // Add your Web3Forms access key
+      formDataToSend.append('access_key', 'a2140f9b-f69d-44ba-830e-4e3b0e508d16');
+      
+      // Add recipient email (this will override the default recipient in Web3Forms)
+      formDataToSend.append('to_email', 'sandeepnayak1724@gmail.com');
+      
+      // Send data to Web3Forms API
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
       });
       
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+      const data = await response.json();
+      
+      if (data.success) {
+        // Reset form and show success message
+        setSubmitSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        throw new Error(data.message || 'Form submission failed');
+      }
+    } catch (error) {
+      setSubmitError('Failed to send message. Please try again later.');
+      console.error('Error sending form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -78,6 +109,9 @@ const Contact: React.FC = () => {
             )}
             
             <form onSubmit={handleSubmit}>
+              {/* Hidden field for recipient email */}
+              <input type="hidden" name="to_email" value="sandeepnayak1724@gmail.com" />
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
@@ -185,7 +219,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-300 mb-1">Email</p>
-                    <a href="mailto:contact@yourname.com" className="text-lg font-medium hover:text-cyan-300 transition-colors">
+                    <a href="mailto:sandeepnayak1724@gmail.com" className="text-lg font-medium hover:text-cyan-300 transition-colors">
                       sandeepnayak1724@gmail.com
                     </a>
                   </div>
@@ -197,7 +231,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-300 mb-1">Phone</p>
-                    <a href="tel:+11234567890" className="text-lg font-medium hover:text-cyan-300 transition-colors">
+                    <a href="tel:+918456834944" className="text-lg font-medium hover:text-cyan-300 transition-colors">
                       +91 8456834944
                     </a>
                   </div>
@@ -210,7 +244,7 @@ const Contact: React.FC = () => {
                   <div>
                     <p className="text-sm text-gray-300 mb-1">Location</p>
                     <p className="text-lg font-medium">
-                     Bhubaneswar,Odisha,India
+                     Bhubaneswar, Odisha, India
                     </p>
                   </div>
                 </div>

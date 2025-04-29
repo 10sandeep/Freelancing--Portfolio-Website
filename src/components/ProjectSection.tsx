@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Github, ExternalLink, PanelRight } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { Tilt } from "react-tilt";
 
 const ProjectsSection: React.FC = () => {
@@ -100,10 +100,10 @@ const ProjectsSection: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-            <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 -mt-17">
-              Featured Project
-            </h2>
-            <div className="w-24 h-1 mx-auto mt-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full "></div>
+          <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 -mt-17">
+            Featured Project
+          </h2>
+          <div className="w-24 h-1 mx-auto mt-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
           <p className="text-gray-300 max-w-2xl mx-auto mt-10">
             Explore a selection of my recent work. Each project represents
             unique challenges and solutions implemented with cutting-edge
@@ -111,6 +111,7 @@ const ProjectsSection: React.FC = () => {
           </p>
         </motion.div>
 
+        {/* Filter Buttons */}
         <div className="flex justify-center mb-10">
           <div className="glass-effect rounded-full p-1 flex space-x-1">
             {["all", "full-stack", "frontend", "backend"].map((category) => (
@@ -129,8 +130,9 @@ const ProjectsSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Project Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -143,10 +145,11 @@ const ProjectsSection: React.FC = () => {
                   scale: 1.02,
                   speed: 300,
                 }}
-                className="h-full"
+                className="w-full h-full"
               >
-                <div className="glass-effect border border-white/10 rounded-xl overflow-hidden h-full group hover:border-neon-blue/30 transition-colors duration-300">
-                  <div className="relative overflow-hidden h-56">
+                <div className="glass-effect aspect-square border border-white/10 rounded-xl overflow-hidden group hover:border-neon-blue/30 transition-colors duration-300 flex flex-col">
+                  {/* Image Section */}
+                  <div className="relative h-2/3 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -178,12 +181,16 @@ const ProjectsSection: React.FC = () => {
                       )}
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-orbitron text-xl font-bold mb-2 group-hover:text-neon-blue transition-colors">
+
+                  {/* Content Section */}
+                  <div className="p-4 flex flex-col flex-grow overflow-hidden">
+                    <h3 className="font-orbitron text-lg font-bold mb-1 group-hover:text-neon-blue transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <p className="text-gray-300 text-sm mb-2 line-clamp-3">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
@@ -200,6 +207,7 @@ const ProjectsSection: React.FC = () => {
           ))}
         </motion.div>
 
+        {/* View more on GitHub */}
         <motion.div
           className="text-center mt-12"
           initial={{ opacity: 0 }}

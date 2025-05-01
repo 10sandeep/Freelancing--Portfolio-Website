@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Github, ExternalLink } from "lucide-react";
 import { Tilt } from "react-tilt";
+import INTERIOR from '../assets/SJ decors.png'
+import AGRIONWHEELS from '../assets/Agri On Wheels.png'
+import GTTECH from '../assets/GT TECH.png'
 
 const ProjectsSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -14,49 +17,46 @@ const ProjectsSection: React.FC = () => {
 
   const projects = [
     {
-      title: "NexTask",
+      title: "Interior Design Website",
       description:
         "A real-time collaborative task management platform with team workspaces and analytics.",
-      image:
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      image:INTERIOR,
+      tags: ["React", "Tailwind CSS", "React-router"],
+      github: "https://github.com/10sandeep/SJ---Decor---Interior-Design---Website",
+      demo: "https://sj-decor-interior-design-website.vercel.app/",
       category: "full-stack",
     },
     {
-      title: "CryptoVision",
+      title: "Agri On Wheels",
       description:
         "Cryptocurrency dashboard with real-time price tracking, portfolio management, and market analysis.",
-      image:
-        "https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      tags: ["React", "Redux", "Firebase", "Chart.js"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      image:AGRIONWHEELS,
+      tags: ["React", "Redux", "Tailwind CSS"],
+      github: "https://github.com/10sandeep/Agri-on-Wheels-",
+      demo: "https://agri-on-wheels.vercel.app/",
       category: "frontend",
     },
     {
-      title: "DevBlogAPI",
+      title: "GT Tech Website",
       description:
         "RESTful API for a developer blogging platform with authentication and content management.",
-      image:
-        "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image:GTTECH,
       tags: ["Node.js", "Express", "MongoDB", "JWT"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      category: "backend",
+      github: "https://github.com/10sandeep/GT-Tech-Website",
+      demo:"https://gt-tech-website.vercel.app/",
+      category: "frontend",
     },
-    {
-      title: "StreamShare",
-      description:
-        "Video streaming platform allowing users to share and watch content in virtual rooms.",
-      image:
-        "https://images.pexels.com/photos/9072216/pexels-photo-9072216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      tags: ["React", "WebRTC", "Firebase", "Node.js"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      category: "full-stack",
-    },
+    // {
+    //   title: "StreamShare",
+    //   description:
+    //     "Video streaming platform allowing users to share and watch content in virtual rooms.",
+    //   image:
+    //     "https://images.pexels.com/photos/9072216/pexels-photo-9072216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    //   tags: ["React", "WebRTC", "Firebase", "Node.js"],
+    //   github: "https://github.com",
+    //   demo: "https://example.com",
+    //   category: "full-stack",
+    // },
   ];
 
   const filteredProjects =

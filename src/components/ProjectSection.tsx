@@ -5,7 +5,7 @@ import { Github, ExternalLink } from "lucide-react";
 import { Tilt } from "react-tilt";
 import INTERIOR from '../assets/SJ decors.png'
 import AGRIONWHEELS from '../assets/Agri On Wheels.png'
-import GTTECH from '../assets/GT TECH.png'
+import DSF from '../assets/DSF Website.png'
 
 const ProjectsSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -37,13 +37,13 @@ const ProjectsSection: React.FC = () => {
       category: "frontend",
     },
     {
-      title: "GT Tech Website",
+      title: "DSF Portfolio Website",
       description:
-        "RESTful API for a developer blogging platform with authentication and content management.",
-      image:GTTECH,
-      tags: ["Node.js", "Express", "MongoDB", "JWT"],
-      github: "https://github.com/10sandeep/GT-Tech-Website",
-      demo:"https://gt-tech-website.vercel.app/",
+        "A modern, responsive portfolio site for showcasing photography work and services with smooth navigation and an elegant, user-friendly design.",
+      image:DSF,
+      tags: ["React", "React-router", "Tailwind CSS", "Typescript"],
+      github: "https://github.com/10sandeep/Photography-Website",
+      demo:"https://photography-website-umber.vercel.app/",
       category: "frontend",
     },
     // {

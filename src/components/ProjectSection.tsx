@@ -19,7 +19,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Interior Design Website",
       description:
-        "A real-time collaborative task management platform with team workspaces and analytics.",
+        "A sleek and responsive website showcasing interior design projects, styles, and services. Features include an image-rich gallery, project highlights, and a contact section — all designed with a focus on aesthetics and usability.",
       image:INTERIOR,
       tags: ["React", "Tailwind CSS", "React-router"],
       github: "https://github.com/10sandeep/SJ---Decor---Interior-Design---Website",
@@ -29,7 +29,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Agri On Wheels",
       description:
-        "Cryptocurrency dashboard with real-time price tracking, portfolio management, and market analysis.",
+        "A simple and user-friendly platform showcasing agricultural products and services delivered directly to consumers. The site features product listings, service details, and a contact section, designed for easy access and smooth navigation.",
       image:AGRIONWHEELS,
       tags: ["React", "Redux", "Tailwind CSS"],
       github: "https://github.com/10sandeep/Agri-on-Wheels-",

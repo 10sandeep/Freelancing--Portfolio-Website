@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Github, ExternalLink } from "lucide-react";
 import { Tilt } from "react-tilt";
-import INTERIOR from '../assets/SJ decors.png'
-import AGRIONWHEELS from '../assets/Agri On Wheels.png'
-import DSF from '../assets/DSF Website.png'
+import INTERIOR from "../assets/SJ decors.png";
+import AGRIONWHEELS from "../assets/Agri On Wheels.png";
+import DSF from "../assets/DSF Website.png";
+import KHAGRI from "../assets/KH Agriconnect.png";
 
 const ProjectsSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -20,9 +21,10 @@ const ProjectsSection: React.FC = () => {
       title: "Interior Design Website",
       description:
         "A sleek and responsive website showcasing interior design projects, styles, and services. Features include an image-rich gallery, project highlights, and a contact section — all designed with a focus on aesthetics and usability.",
-      image:INTERIOR,
+      image: INTERIOR,
       tags: ["React", "Tailwind CSS", "React-router"],
-      github: "https://github.com/10sandeep/SJ---Decor---Interior-Design---Website",
+      github:
+        "https://github.com/10sandeep/SJ---Decor---Interior-Design---Website",
       demo: "https://sj-decor-interior-design-website.vercel.app/",
       category: "full-stack",
     },
@@ -30,7 +32,7 @@ const ProjectsSection: React.FC = () => {
       title: "Agri On Wheels",
       description:
         "A simple and user-friendly platform showcasing agricultural products and services delivered directly to consumers. The site features product listings, service details, and a contact section, designed for easy access and smooth navigation.",
-      image:AGRIONWHEELS,
+      image: AGRIONWHEELS,
       tags: ["React", "Redux", "Tailwind CSS"],
       github: "https://github.com/10sandeep/Agri-on-Wheels-",
       demo: "https://agri-on-wheels.vercel.app/",
@@ -40,23 +42,22 @@ const ProjectsSection: React.FC = () => {
       title: "DSF Portfolio Website",
       description:
         "A modern, responsive portfolio site for showcasing photography work and services with smooth navigation and an elegant, user-friendly design.",
-      image:DSF,
+      image: DSF,
       tags: ["React", "React-router", "Tailwind CSS", "Typescript"],
       github: "https://github.com/10sandeep/Photography-Website",
-      demo:"https://photography-website-umber.vercel.app/",
+      demo: "https://photography-website-umber.vercel.app/",
       category: "frontend",
     },
-    // {
-    //   title: "StreamShare",
-    //   description:
-    //     "Video streaming platform allowing users to share and watch content in virtual rooms.",
-    //   image:
-    //     "https://images.pexels.com/photos/9072216/pexels-photo-9072216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    //   tags: ["React", "WebRTC", "Firebase", "Node.js"],
-    //   github: "https://github.com",
-    //   demo: "https://example.com",
-    //   category: "full-stack",
-    // },
+    {
+      title: "SH Agriconnect",
+      description:
+        "A modern, responsive website built for KH Agricconnect, a sustainable agriculture solutions provider. The platform highlights their mission to empower rural livelihoods through tech-driven farm tools and trusted trade. Features include a clean UI, intuitive navigation, service discovery, team showcase, and contact integrations to support their outreach and impact goals.",
+      image: KHAGRI,
+      tags: ["React", "React-router", "Tailwind CSS", "Typescript"],
+      github: "https://github.com/10sandeep/KH-Agriconnects",
+      demo: "https://kh-agriconnects.vercel.app/",
+      category: "frontend",
+    },
   ];
 
   const filteredProjects =
@@ -215,7 +216,7 @@ const ProjectsSection: React.FC = () => {
           transition={{ delay: 0.6 }}
         >
           <a
-            href="https://github.com"
+            href="https://github.com/10sandeep"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 font-medium rounded-full glass-effect hover:bg-white/5 transition-colors"

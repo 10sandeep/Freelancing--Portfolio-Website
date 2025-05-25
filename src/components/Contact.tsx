@@ -260,16 +260,16 @@ const Contact: React.FC = () => {
               <div className="border-t border-white/10 pt-6 mt-6">
                 <h4 className="font-semibold mb-4 text-gray-200">Connect with me</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+                  <a href="https://www.instagram.com/sandeep_nayak_14/" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="#" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+                  {/* <a href="#" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
                     <Facebook className="w-5 h-5" />
-                  </a>
-                  <a href="#" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+                  </a> */}
+                  <a href="https://www.linkedin.com/in/sandeep-nayak-0547461a9/" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="#" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+                  <a href="https://github.com/10sandeep?tab=overview&from=2025-01-01&to=2025-01-13" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
                     <Github className="w-5 h-5" />
                   </a>
                 </div>

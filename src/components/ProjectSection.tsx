@@ -7,6 +7,7 @@ import INTERIOR from "../assets/SJ decors.png";
 import AGRIONWHEELS from "../assets/Agri On Wheels.png";
 import DSF from "../assets/DSF Website.png";
 import KHAGRI from "../assets/KH Agriconnect.png";
+import MARRIAGE from '../assets/Marriage Event.png'
 
 const ProjectsSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -56,6 +57,16 @@ const ProjectsSection: React.FC = () => {
       tags: ["React", "React-router", "Tailwind CSS", "Typescript"],
       github: "https://github.com/10sandeep/KH-Agriconnects",
       demo: "https://kh-agriconnects.vercel.app/",
+      category: "frontend",
+    },
+        {
+      title: "Marriage Event Orginizer Website",
+      description:
+        "A sleek, responsive website for a wedding planning company, featuring service listings, gallery, booking form, and smooth user experience.",
+      image: MARRIAGE,
+      tags: ["React", "React-router", "Tailwind CSS", "Typescript"],
+      github: "https://github.com/10sandeep/Marriage_Event_Management-Website",
+      demo: "https://marriage-event-management-website.vercel.app/",
       category: "frontend",
     },
   ];

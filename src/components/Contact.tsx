@@ -263,7 +263,7 @@ const Contact: React.FC = () => {
                   <a href="https://www.instagram.com/sandeep_nayak_14/" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="https://x.com/Sandeep142417" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+                  <a href="" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
                     <Twitter className="w-5 h-5" />
                   </a>
                   <a href="https://www.linkedin.com/in/sandeep-nayak-0547461a9/" className="bg-white/5 hover:bg-indigo-500/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
